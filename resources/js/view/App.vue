@@ -4,25 +4,7 @@
         <!-- Barra de superior -->
         <v-app-bar dense flat class="light-blue accent-4" dark>
            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-           <v-toolbar-title>Rsus</v-toolbar-title>
-           <v-spacer></v-spacer>
-
-           <v-menu left bottom>
-             <template v-slot:activator="{on, attrs}">
-                <v-btn icon v-bind="attrs" v-on="on">
-                  <v-icon> mdi-dots-vertical</v-icon>
-                </v-btn>
-             </template>
-
-             <v-list>
-               <v-list-item link class="text-decoration-none" :to="{name:'ListarUsuarios'}"v-if="currentUser.is_super_user">
-                 <v-list-item-subtitle>Usuarios</v-list-item-subtitle>
-                 <v-list-item-icon>
-                   <v-icon>mdi-account-box</v-icon>
-                 </v-list-item-icon>
-               </v-list-item>
-             </v-list>
-           </v-menu>
+           <v-toolbar-title>AppCrud</v-toolbar-title>
         </v-app-bar>
 
 
@@ -59,6 +41,15 @@
 
               <v-list-item-title>Cadastro de Clientes</v-list-item-title>
             </v-list-item>
+
+            <v-list-item link :to="{name:'ListarUsuarios'}" v-if="currentUser.is_super_user">
+              <v-list-item-icon>
+                <v-icon>mdi-account-box</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-title>Cadastro de Usuarios</v-list-item-title>
+            </v-list-item>
+
           </v-list>
 
 

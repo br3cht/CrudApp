@@ -2993,15 +2993,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -41520,80 +41511,7 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("v-toolbar-title", [_vm._v("Rsus")]),
-                _vm._v(" "),
-                _c("v-spacer"),
-                _vm._v(" "),
-                _c(
-                  "v-menu",
-                  {
-                    attrs: { left: "", bottom: "" },
-                    scopedSlots: _vm._u(
-                      [
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var on = ref.on
-                            var attrs = ref.attrs
-                            return [
-                              _c(
-                                "v-btn",
-                                _vm._g(
-                                  _vm._b(
-                                    { attrs: { icon: "" } },
-                                    "v-btn",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v(" mdi-dots-vertical")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ],
-                      null,
-                      false,
-                      2307789078
-                    )
-                  },
-                  [
-                    _vm._v(" "),
-                    _c(
-                      "v-list",
-                      [
-                        _vm.currentUser.is_super_user
-                          ? _c(
-                              "v-list-item",
-                              {
-                                staticClass: "text-decoration-none",
-                                attrs: {
-                                  link: "",
-                                  to: { name: "ListarUsuarios" }
-                                }
-                              },
-                              [
-                                _c("v-list-item-subtitle", [
-                                  _vm._v("Usuarios")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "v-list-item-icon",
-                                  [_c("v-icon", [_vm._v("mdi-account-box")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          : _vm._e()
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
+                _c("v-toolbar-title", [_vm._v("AppCrud")])
               ],
               1
             ),
@@ -41682,7 +41600,28 @@ var render = function() {
                         ])
                       ],
                       1
-                    )
+                    ),
+                    _vm._v(" "),
+                    _vm.currentUser.is_super_user
+                      ? _c(
+                          "v-list-item",
+                          {
+                            attrs: { link: "", to: { name: "ListarUsuarios" } }
+                          },
+                          [
+                            _c(
+                              "v-list-item-icon",
+                              [_c("v-icon", [_vm._v("mdi-account-box")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-list-item-title", [
+                              _vm._v("Cadastro de Usuarios")
+                            ])
+                          ],
+                          1
+                        )
+                      : _vm._e()
                   ],
                   1
                 ),
