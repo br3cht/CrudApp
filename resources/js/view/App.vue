@@ -47,7 +47,15 @@
                 <v-icon>mdi-account-box</v-icon>
               </v-list-item-icon>
 
-              <v-list-item-title>Cadastro de Usuarios</v-list-item-title>
+              <v-list-item-title>Cadastrar Usuarios</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item link :to="{name:'ListarClientes'}">
+              <v-list-item-icon>
+                <v-icon>mdi-account-box</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-title>Listar Clientes</v-list-item-title>
             </v-list-item>
 
           </v-list>

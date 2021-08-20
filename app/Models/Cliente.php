@@ -9,9 +9,6 @@ class Cliente extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = [
-        'user_id'
-    ];
     
     public function datasecs(){
      return $this->hasone(datasec::class);

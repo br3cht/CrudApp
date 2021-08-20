@@ -26,18 +26,20 @@ class ClienteController extends Controller
     function save_db($request){
       $cliente = new Cliente();
       $cliente->nome = strtoupper($request->nome);
-      $cliente->datanascimento = $request->datanascimento;
       $cliente->sobrenome = strtoupper($request->sobrenome);
       $cliente->cidade = $request->cidade;
+      $cliente->email = $request->email;
       $cliente->UF = $request->uf;
       $cliente->telefone = $request->telefone;
       $cliente->endereco = $request->endereco;
-      $cliente->sexo = $request->sexo;
+      $cliente->sexo = $request->sexo[0];
+      $cliente->datanascimento = $request->datanascimento;
+
       $cliente->save();
 
       $sensitive_data = new datasec();
       $sensitive_data->cpf = $request->cpf;
-      $aluno->datasecs()->save($sensitive_data);
+      $cliente->datasecs()->save($sensitive_data);
     }
 
     $validator = Validator::make($request->all(), [
@@ -47,9 +49,10 @@ class ClienteController extends Controller
         ],['email.unique'=>'email já cadastrado','cpf.unique'=>'cpf já cadastrado','telefone.unique'=>'telefone já cadastrado']);
 
     if($validator->passes()){
-      save_db($request);
-      return ['sucess'=>1];
-    }
+       save_db($request);
+       return ['sucess'=>1];
+     }
+
     if($validator->fails()){
       return ['sucess'=>0,'message'=>$validator->errors()];
     }

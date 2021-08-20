@@ -2,6 +2,7 @@ import Home from '../components/home/HomeComponent.vue';
 import Login from '../components/Auth/LoginComponent.vue';
 import Register from '../components/Auth/RegisterComponent.vue'
 import ListarUsuarios from '../components/Admin/UsuariosComponent.vue';
+import ListarClientes from '../components/Cliente/ListarClientesComponent.vue';
 import CadastroCliente from '../components/Cliente/CadastroComponent.vue';
 export const routes = [
     {
@@ -30,7 +31,13 @@ export const routes = [
       path:'/CadastroCliente',
       component:CadastroCliente,
       meta:{requiresAuth:true}
-    }, 
+    },
+    {
+      name:'ListarClientes',
+      path:'/ListarClientes',
+      component:ListarClientes,
+      meta:{requiresAuth:true},
+    },
 
     {
       name:'ListarUsuarios',
